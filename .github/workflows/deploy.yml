@@ -24,7 +24,5 @@ jobs:
       run: |
         mkdir $HOME/.ssh
         echo $DEPLOY_KEY > $HOME/.ssh/id_rsa
-        cat ~/.ssh/known_hosts
-        rm ~/.ssh/known_hosts
-        ssh -T root@138.197.68.192
+        ssh -T -o "StrictHostKeyChecking no" root@138.197.68.192
 
