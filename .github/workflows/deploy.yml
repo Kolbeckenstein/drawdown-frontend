@@ -3,29 +3,33 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  # build:
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        echo $DEPLOY_PASS
-        env
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #   - name: Run a one-line script
+  #     run: echo Hello, world!
+  #   - name: Run a multi-line script
+  #     run: |
+  #       echo Add other actions to build,
+  #       echo test, and deploy your project.
+  #       echo $DEPLOY_PASS
+  #       env
 
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      DEPLOY_UN: ${{ secrets.deploy_un }}
+      DEPLOY_PASS: ${{ secrets.deploy_pass }}
 
     steps:
     - name: Deploy
       uses: appleboy/ssh-action@master
       env:
-        USERNAME: ${{ secrets.deploy_un }}
-        PASSWORD: ${{ secrets.deploy_pass }}
+        USERNAME: $DEPLOY_UN
+        PASSWORD: $DEPLOY_PASS
         HOST: 138.197.68.192
         SCRIPT: echo "Testing"
