@@ -16,9 +16,10 @@ jobs:
         script: |
           apt install docker.io
           apt-get install update
-          apt-get install node
+          curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+          sudo apt-get install -y nodejs
           npm install -g gatsby-cli
-          
+
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git pull
