@@ -16,3 +16,4 @@ jobs:
         script: |
           ls -la
           pwd
+          git pull https://github.com/Kolbeckenstein/drawdown-frontend.git
