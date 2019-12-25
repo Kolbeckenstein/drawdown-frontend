@@ -24,7 +24,7 @@ jobs:
     - name: ssh to box
       run: |
         sudo apt-get install sshpass
-        sshpass -p $DEPLOY_PASS ssh $DEPLOY_UN@138.197.68.192
+        sshpass -tt -p $DEPLOY_PASS ssh $DEPLOY_UN@138.197.68.192
         echo hello
         exit
 
