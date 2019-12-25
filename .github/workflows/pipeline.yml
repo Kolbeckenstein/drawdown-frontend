@@ -28,4 +28,7 @@ jobs:
           fi
           gatsby build
           docker build -t drawdown-frontend .
+          docker stop drawdown-frontend
+          docker rm drawdown-frontend
           docker run -d -p 80:80 drawdown-frontend
+          docker system prune
