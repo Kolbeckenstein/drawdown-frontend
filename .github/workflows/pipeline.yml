@@ -25,3 +25,4 @@ jobs:
           fi
           ls -la
           pwd
+          docker --help
