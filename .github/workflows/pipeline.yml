@@ -14,8 +14,6 @@ jobs:
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
         script: |
-          ls -la
-          pwd
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git pull
@@ -23,7 +21,6 @@ jobs:
             git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
             cd drawdown-frontend
           fi
-          ls -la
-          pwd
+          gatsby build
           docker build -t drawdown-frontend .
           docker run -d -p 80:80 drawdown-frontend
