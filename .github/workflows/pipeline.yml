@@ -16,4 +16,12 @@ jobs:
         script: |
           ls -la
           pwd
-          git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
+          if [ -d "drawdown-frontend" ]; then
+            cd drawdown-frontend
+            git pull
+          else 
+            git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
+            cd drawdown-frontend
+          fi
+          ls -la
+          pwd
