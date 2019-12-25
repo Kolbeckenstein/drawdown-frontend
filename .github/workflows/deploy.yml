@@ -25,5 +25,6 @@ jobs:
         mkdir $HOME/.ssh
         echo $DEPLOY_KEY > $HOME/.ssh/id_rsa
         ls $HOME/.ssh
+        cat $HOME/.ssh/id_rsa
         ssh -T root@138.197.68.192
 
