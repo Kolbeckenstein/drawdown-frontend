@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env: # Or as an environment variable
-      deploy_un: ${{ secrets.deploy_un }}
+      DEPLOY_UN: ${{ secrets.deploy_un }}
+      DEPLOY_PASS: ${{ secrets.deploy_pass }}
 
     steps:
     - uses: actions/checkout@v1
@@ -18,6 +19,12 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-        echo $deploy_un
+        echo $DEPLOY_PASS
         env
+    - name: ssh to box
+      run: |
+        sudo apt-get install sshpass
+        sshpass -p $DEPLOY_PASS ssh $DEPLOY_UN@138.197.68.192
+        echo hello
+        exit
 
