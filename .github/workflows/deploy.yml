@@ -7,6 +7,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env: # Or as an environment variable
+      deploy_un: ${{ secrets.deploy_un }}
+      deploy_pass: ${{decrets.deploy_pass }}
+
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
@@ -15,3 +19,5 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        echo $deploy_un
+
