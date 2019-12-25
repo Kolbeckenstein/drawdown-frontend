@@ -7,9 +7,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env: # Or as an environment variable
-      DEPLOY_UN: ${{ secrets.deploy_un }}
-      DEPLOY_PASS: ${{ secrets.deploy_pass }}
+    env:
+      DEPLOY_KEY: ${{ secrets.deploy_key }}
 
     steps:
     - uses: actions/checkout@v1
@@ -23,7 +22,6 @@ jobs:
         env
     - name: ssh to box
       run: |
-        sshpass -p $DEPLOY_PASS ssh -T $DEPLOY_UN@138.197.68.192
-        echo hello
-        exit
+        echo $DEPLOY_KEY > $HOME/.ssh/id_rsa
+        ssh root@138.197.68.192
 
