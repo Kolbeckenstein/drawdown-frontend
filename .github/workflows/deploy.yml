@@ -7,9 +7,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      DEPLOY_KEY: ${{ secrets.deploy_key }}
-
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
@@ -21,9 +18,19 @@ jobs:
         echo $DEPLOY_PASS
         env
     - name: ssh to box
-      run: |
-        mkdir $HOME/.ssh
-        echo $DEPLOY_KEY > $HOME/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh -T -o "StrictHostKeyChecking no" root@138.197.68.192
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: 
 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to nerdhood.de
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: ${{ secrets.deploy_un }}
+        HOST: 138.197.68.192
+        SCRIPT: echo "Testing"
+        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
