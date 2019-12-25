@@ -28,8 +28,8 @@ jobs:
           fi
           gatsby build
           docker build -t drawdown-frontend .
-          CURRENT_CONTAINER="$(docker ps -q)"
-          docker stop $CURRENT_CONTAINER
-          docker rm $CURRENT_CONTAINER
-          docker run -d -p 80:80 drawdown-frontend
+          #CURRENT_CONTAINER="$(docker ps -q)"
+          docker stop drawdown-frontend
+          docker rm drawdown-frontend
+          docker run -name drawdown-frontend -d -p 80:80 drawdown-frontend
           docker system prune
