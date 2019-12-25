@@ -14,6 +14,11 @@ jobs:
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
         script: |
+          apt install docker.io
+          apt-get install update
+          apt-get install node
+          npm install -g gatsby-cli
+          
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git pull
@@ -21,6 +26,7 @@ jobs:
             git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
             cd drawdown-frontend
           fi
+
           gatsby build
           docker build -t drawdown-frontend .
           docker run -d -p 80:80 drawdown-frontend
