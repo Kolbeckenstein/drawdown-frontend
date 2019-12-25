@@ -9,7 +9,6 @@ jobs:
 
     env: # Or as an environment variable
       deploy_un: ${{ secrets.deploy_un }}
-      deploy_pass: ${{ secrets.deploy_pass }}
 
     steps:
     - uses: actions/checkout@v1
@@ -20,4 +19,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         echo $deploy_un
+        env
 
