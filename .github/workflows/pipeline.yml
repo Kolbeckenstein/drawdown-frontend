@@ -13,4 +13,6 @@ jobs:
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
-        script: ls
+        script: |
+          ls -la
+          pwd
