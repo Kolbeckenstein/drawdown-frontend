@@ -9,7 +9,7 @@ jobs:
 
     env: # Or as an environment variable
       deploy_un: ${{ secrets.deploy_un }}
-      deploy_pass: ${{decrets.deploy_pass }}
+      deploy_pass: ${{ secrets.deploy_pass }}
 
     steps:
     - uses: actions/checkout@v1
