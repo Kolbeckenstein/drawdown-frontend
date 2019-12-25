@@ -17,15 +17,10 @@ jobs:
         echo test, and deploy your project.
         echo $DEPLOY_PASS
         env
-    - name: ssh to box
-      uses: appleboy/ssh-action@master
-      env:
-        USERNAME: 
 
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
     - name: Deploy to nerdhood.de
       uses: appleboy/ssh-action@master
