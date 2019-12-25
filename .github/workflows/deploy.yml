@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy to nerdhood.de
+    - name: Deploy
       uses: appleboy/ssh-action@master
       env:
         USERNAME: ${{ secrets.deploy_un }}
+        PASSWORD: ${{ secrets.deploy_pass }}
         HOST: 138.197.68.192
         SCRIPT: echo "Testing"
-        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
