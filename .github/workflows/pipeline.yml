@@ -4,17 +4,14 @@ on: [push]
 
 jobs:
 
-  deploy:
+  pipeline:
     runs-on: ubuntu-latest
-
     steps:
+    - name: Build
     - name: Deploy
       uses: appleboy/ssh-action@master
       with:
-        # username: ${{ secrets.deploy_un }}
-        # # password: ${{ secrets.deploy_pass }}
-        # password: "someeincorrectpassword"
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
-        script: echo "Testing"
+        script: deploy.sh
