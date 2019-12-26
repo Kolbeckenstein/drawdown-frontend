@@ -16,8 +16,8 @@ jobs:
         script: |
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
-            git stash
-            git pull
+            git fetch --all
+            git reset --hard origin/master
           else 
             apt-get install update
             apt-get install docker.io
