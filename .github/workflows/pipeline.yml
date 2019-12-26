@@ -16,6 +16,7 @@ jobs:
         script: |
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
+            git stash
             git pull
           else 
             apt-get install update
