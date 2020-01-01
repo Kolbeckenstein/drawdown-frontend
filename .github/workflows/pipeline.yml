@@ -11,14 +11,16 @@ jobs:
       uses: appleboy/ssh-action@master
       env:
         CMS_API_KEY: "${{ secrets.cms_api_key }}"
+        FOO: "BAR"
       with:
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
-        envs: CMS_API_KEY
+        envs: CMS_API_KEY,FOO
         script: |
           env
           echo "TestValue=$CSM_API_KEY"
+          echo "BarValue=$FOO"
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git fetch --all
