@@ -3,6 +3,16 @@ name: CI
 on: [push]
 
 jobs:
+  test-pipe:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      envs:
+        CMS_API_KEY: "${{ secrets.cms_api_key }}"
+        FOO: "BAR"
+        script: |
+          echo "TestValue=$CSM_API_KEY"
+          echo "BarValue=$FOO"
 
   pipeline:
     runs-on: ubuntu-latest
@@ -10,7 +20,7 @@ jobs:
     - name: Deploy
       uses: appleboy/ssh-action@master
       env:
-        # CMS_API_KEY: "${{ secrets.cms_api_key }}"
+        CMS_API_KEY: "${{ secrets.cms_api_key }}"
         FOO: "BAR"
       with:
         CMS_API_KEY: ${{ secrets.cms_api_key }}
