@@ -10,7 +10,7 @@ jobs:
     - name: Deploy
       uses: appleboy/ssh-action@master
       env:
-        CMS_API_KEY: ${{ secrets.cms_api_key }}
+        CMS_API_KEY: "${{ secrets.cms_api_key }}"
       with:
         username: root
         key: ${{ secrets.deploy_key }}
@@ -18,7 +18,7 @@ jobs:
         envs: CMS_API_KEY
         script: |
           env
-          echo "Key is: $CSM_API_KEY"
+          echo "TestValue=$CSM_API_KEY"
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git fetch --all
