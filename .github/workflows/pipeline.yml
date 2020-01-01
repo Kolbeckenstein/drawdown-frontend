@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Test
       env:
-        CMS_API_KEY: "${{ secrets.cms_api_key }}"
+        CMS_API_KEY: ${{ secrets.cms_api_key }}
         FOO: "BAR"
       run: |
         echo "TestValue=$CSM_API_KEY"
