@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test
-      envs:
+      env:
         CMS_API_KEY: "${{ secrets.cms_api_key }}"
         FOO: "BAR"
       run: |
