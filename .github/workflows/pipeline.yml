@@ -18,6 +18,7 @@ jobs:
         envs: CMS_API_KEY
         script: |
           env
+          echo "Key is: $CSM_API_KEY"
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git fetch --all
