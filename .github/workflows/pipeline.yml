@@ -10,9 +10,9 @@ jobs:
       envs:
         CMS_API_KEY: "${{ secrets.cms_api_key }}"
         FOO: "BAR"
-        script: |
-          echo "TestValue=$CSM_API_KEY"
-          echo "BarValue=$FOO"
+      run: |
+        echo "TestValue=$CSM_API_KEY"
+        echo "BarValue=$FOO"
 
   pipeline:
     runs-on: ubuntu-latest
