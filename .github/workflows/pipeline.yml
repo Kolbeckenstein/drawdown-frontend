@@ -15,6 +15,7 @@ jobs:
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
+        envs: CMS_API_KEY
         script: |
           env
           if [ -d "drawdown-frontend" ]; then
