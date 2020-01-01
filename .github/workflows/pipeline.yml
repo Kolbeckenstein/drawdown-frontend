@@ -9,11 +9,14 @@ jobs:
     steps:
     - name: Deploy
       uses: appleboy/ssh-action@master
+      env:
+        CMS_API_KEY: ${{ secrets.cms_api_key }}
       with:
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
         script: |
+          echo $CMS_API_KEY
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git fetch --all
