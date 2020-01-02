@@ -3,20 +3,6 @@ name: CI
 on: [push]
 
 jobs:
-  # test-pipe:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Test
-  #     env:
-  #       CMS_API_KEY: ${{ secrets.cms_api_key }}
-  #       FOO: "BAR"
-  #     run: |
-  #       if [ -z "$CMS_API_KEY" ]
-  #       then
-  #         echo "\$CMS_API_KEY is empty"
-  #       else
-  #         echo "\$CMS_API_KEY is NOT empty"
-  #       fi
 
   pipeline:
     runs-on: ubuntu-latest
