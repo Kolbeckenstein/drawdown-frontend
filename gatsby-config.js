@@ -40,7 +40,7 @@ module.exports = {
         cockpitConfig: {
           baseURL: 'http://167.172.237.13:8888',
           folder: '/cockpit',
-          accessToken: process.env.CMS_API_KEY,
+          accessToken: 'd59e079e67b561fa01d3ba45c9325d',
           collections: ['Solutions', 'Organizations'],
           regions: ['footer'],
           customComponents: [],
@@ -52,4 +52,3 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
-console.log(process.env.CMS_API_KEY);
