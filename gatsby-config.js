@@ -52,3 +52,4 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+console.log(process.env.CMS_API_KEY);
