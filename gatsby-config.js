@@ -38,7 +38,7 @@ module.exports = {
       resolve: 'gatsby-plugin-cockpit',
       options: {
         cockpitConfig: {
-          baseURL: 'http://167.172.237.13:8080',
+          baseURL: 'http://167.172.237.13',
           folder: '/cockpit',
           accessToken: 'c649e45f547225626dbcb995ee8cfc',
           collections: ['Solutions', 'Organizations'],
