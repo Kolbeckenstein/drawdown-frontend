@@ -23,12 +23,12 @@ const IndexPage = ({data}) => (
 )
 
 export default IndexPage
-export default query = graphql`
-  allSolutions {
-    edges {
-        nodes {
-            Name
-        }
-    }
-  }
-`
+// export default query = graphql`
+//   allSolutions {
+//     edges {
+//         nodes {
+//             Name
+//         }
+//     }
+//   }
+// `
