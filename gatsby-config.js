@@ -39,7 +39,7 @@ module.exports = {
       options: {
         cockpitConfig: {
           baseURL: 'http://167.172.237.13:8080',
-          folder: '/cockpit',
+          folder: '',
           accessToken: 'c649e45f547225626dbcb995ee8cfc',
           collections: ['Solutions', 'Organizations'],
           regions: ['footer'],
