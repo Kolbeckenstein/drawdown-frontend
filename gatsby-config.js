@@ -40,7 +40,7 @@ module.exports = {
         cockpitConfig: {
           baseURL: 'http://167.172.237.13:8888',
           folder: '/cockpit',
-          accessToken: '8ea201bf48ffe8e7cb6f1f0339012c',
+          accessToken: process.env.CMS_API_KEY,
           collections: ['Solutions', 'Organizations'],
           regions: ['footer'],
           customComponents: [],

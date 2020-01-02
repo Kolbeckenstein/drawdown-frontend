@@ -3,20 +3,20 @@ name: CI
 on: [push]
 
 jobs:
-  test-pipe:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Test
-      env:
-        CMS_API_KEY: ${{ secrets.cms_api_key }}
-        FOO: "BAR"
-      run: |
-        if [ -z "$CMS_API_KEY" ]
-        then
-          echo "\$CMS_API_KEY is empty"
-        else
-          echo "\$CMS_API_KEY is NOT empty"
-        fi
+  # test-pipe:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Test
+  #     env:
+  #       CMS_API_KEY: ${{ secrets.cms_api_key }}
+  #       FOO: "BAR"
+  #     run: |
+  #       if [ -z "$CMS_API_KEY" ]
+  #       then
+  #         echo "\$CMS_API_KEY is empty"
+  #       else
+  #         echo "\$CMS_API_KEY is NOT empty"
+  #       fi
 
   pipeline:
     runs-on: ubuntu-latest
@@ -25,17 +25,12 @@ jobs:
       uses: appleboy/ssh-action@master
       env:
         CMS_API_KEY: "${{ secrets.cms_api_key }}"
-        FOO: "BAR"
       with:
-        CMS_API_KEY: ${{ secrets.cms_api_key }}
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
-        envs: CMS_API_KEY,FOO
+        envs: CMS_API_KEY
         script: |
-          env
-          echo "TestValue=$CSM_API_KEY"
-          echo "BarValue=$FOO"
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
             git fetch --all
