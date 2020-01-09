@@ -39,7 +39,7 @@ module.exports = {
       options: {
         cockpitConfig: {
           baseURL: 'http://167.172.237.13:8080',
-          accessToken: 'c649e45f547225626dbcb995ee8cfc',
+          accessToken: '47d1ff352dc513c14e1da22ffdce77',
         }
       }
     }
