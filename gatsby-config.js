@@ -40,6 +40,7 @@ module.exports = {
         cockpitConfig: {
           baseURL: 'http://167.172.237.13:8080',
           accessToken: '47d1ff352dc513c14e1da22ffdce77',
+          regions: [],
         }
       }
     }
