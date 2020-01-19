@@ -13,13 +13,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -35,15 +28,18 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-cockpit',
+      resolve: `gatsby-source-strapi`,
       options: {
-        cockpitConfig: {
-          baseURL: 'http://167.172.237.13:8080',
-          accessToken: '47d1ff352dc513c14e1da22ffdce77',
-          regions: [],
-        }
-      }
-    }
+        apiURL: `http://167.172.237.13/admin`,
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`solutions`],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        // loginData: {
+        //   identifier: "",
+        //   password: "",
+        // },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
