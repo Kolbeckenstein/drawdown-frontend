@@ -30,7 +30,11 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
+<<<<<<< HEAD
         apiURL: `http://167.172.237.13/`,
+=======
+        apiURL: `http://167.172.237.13`,
+>>>>>>> Trying different url
         queryLimit: 1000, // Default to 100
         contentTypes: [`solutions`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
