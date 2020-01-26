@@ -33,7 +33,6 @@ module.exports = {
         apiURL: `http://167.172.237.13`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`solutions`],
-        // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
           identifier: process.env.CMS_USERNAME,
           password: process.env.CMS_PASSWORD,
