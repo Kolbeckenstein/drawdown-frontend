@@ -10,7 +10,8 @@ jobs:
     - name: Deploy
       uses: appleboy/ssh-action@master
       env:
-        CMS_API_KEY: "${{ secrets.cms_api_key }}"
+        CMS_USERNAME: "${{ secrets.cms_username }}"
+        CMS_PASSWORD: "${{ secrets.cms_password }}"
       with:
         username: root
         key: ${{ secrets.deploy_key }}

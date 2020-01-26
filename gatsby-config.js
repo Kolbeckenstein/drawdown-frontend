@@ -34,10 +34,10 @@ module.exports = {
         queryLimit: 1000, // Default to 100
         contentTypes: [`solutions`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
-        // loginData: {
-        //   identifier: "",
-        //   password: "",
-        // },
+        loginData: {
+          identifier: process.env.CMS_USERNAME,
+          password: process.env.CMS_PASSWORD,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
