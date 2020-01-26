@@ -33,10 +33,10 @@ module.exports = {
         apiURL: `http://167.172.237.13`,
         queryLimit: 1000, // Defaults to 100
         contentTypes: [`solutions`],
-        loginData: {
-          identifier: process.env.CMS_USERNAME,
-          password: process.env.CMS_PASSWORD,
-        },
+        // loginData: {
+        //   identifier: process.env.CMS_USERNAME,
+        //   password: process.env.CMS_PASSWORD,
+        // },
       },
     },
   ],
