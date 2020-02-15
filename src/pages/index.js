@@ -26,15 +26,11 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiSolution {
-      edges {
-        node {
-          id
-          name
-          description
-          number
-        }
-      }
+    solutions {
+      id
+      Name
+      Number
+      Description
     }
   }
 `
