@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -14,7 +14,6 @@ const IndexPage = ({data}) => (
     <p>This is some additional content</p>
     <p>This should also appear if automation works.</p>
     <p>Some data:</p>
-    {data}
     <p>{data}</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
