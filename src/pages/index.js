@@ -26,7 +26,7 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    solutions {
+    strapiSolution {
       id
       Name
       Number
