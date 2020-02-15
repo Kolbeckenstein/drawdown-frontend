@@ -14,7 +14,7 @@ const IndexPage = ({data}) => (
     <p>This is some additional content</p>
     <p>This should also appear if automation works.</p>
     <p>Some data:</p>
-    {/* {data.strapiSolution.edges.node} */}
+    {data.strapiSolution}
     <p>{data}</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
@@ -25,13 +25,13 @@ const IndexPage = ({data}) => (
 
 export default IndexPage
 
-// export const pageQuery = graphql`  
-//   query IndexQuery {
-//     strapiSolution {
-//       id
-//       Name
-//       Number
-//       Description
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query IndexQuery {
+    strapiSolution {
+      id
+      Name
+      Number
+      Description
+    }
+  }
+`
