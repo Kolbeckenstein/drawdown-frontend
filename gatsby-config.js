@@ -30,9 +30,9 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://167.172.237.13`,
+        apiURL: `http://64.225.31.179:1337`,
         queryLimit: 1000, // Defaults to 100
-        contentTypes: [`solutions`],
+        contentTypes: [`solution`],
         // loginData: {
         //   identifier: process.env.CMS_USERNAME,
         //   password: process.env.CMS_PASSWORD,
