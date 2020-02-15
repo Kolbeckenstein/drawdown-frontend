@@ -15,6 +15,7 @@ const IndexPage = ({data}) => (
     <p>This should also appear if automation works.</p>
     <p>Some data:</p>
     {/* {data.strapiSolution.edges.node} */}
+    <p>{data}</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
