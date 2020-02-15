@@ -25,13 +25,13 @@ const IndexPage = ({data}) => (
 
 export default IndexPage
 
-export const pageQuery = graphql`  
-  query IndexQuery {
-    strapiSolution {
-      id
-      Name
-      Number
-      Description
-    }
-  }
-`
+// export const pageQuery = graphql`  
+//   query IndexQuery {
+//     strapiSolution {
+//       id
+//       Name
+//       Number
+//       Description
+//     }
+//   }
+// `
