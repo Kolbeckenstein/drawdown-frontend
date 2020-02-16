@@ -28,7 +28,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allStrapiSolution {
       edges {
-        nodes {
+        node {
           Name
         }
       }
