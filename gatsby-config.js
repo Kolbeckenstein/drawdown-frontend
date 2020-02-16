@@ -13,6 +13,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://64.225.31.179:1337`,
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: [`solution`],
+        // loginData: {
+        //   identifier: process.env.CMS_USERNAME,
+        //   password: process.env.CMS_PASSWORD,
+        // },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -26,18 +38,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       }
-    },
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: `http://64.225.31.179:1337`,
-        queryLimit: 1000, // Defaults to 100
-        contentTypes: [`solution`],
-        // loginData: {
-        //   identifier: process.env.CMS_USERNAME,
-        //   password: process.env.CMS_PASSWORD,
-        // },
-      },
     },
   ],
 }

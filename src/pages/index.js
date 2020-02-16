@@ -26,11 +26,23 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    strapiSolution {
-      Name
+    allStrapiSolution {
+      edges {
+        nodes {
+          Name
+        }
+      }
     }
   }
 `
+
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     strapiSolution {
+//       Name
+//     }
+//   }
+// `
 // export const pageQuery = graphql`
 //   query IndexQuery {
 //     strapiSolution {
