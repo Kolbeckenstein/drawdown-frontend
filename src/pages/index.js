@@ -13,8 +13,13 @@ const IndexPage = ({data}) => (
     <p>Now go build something great.</p>
     <p>This is some additional content</p>
     <p>This should also appear if automation works.</p>
-    <p>Some data:</p>
-    <p>{data}</p>
+    <p>If integration works, data should appear below: </p>
+    {data.allStrapiSolution.edges.map(document => (
+      <div>
+        <h3>{document.node.Number}: {document.node.Name}</h3>
+        <p>{document.node.Description}</p>
+      </div>
+    ))}
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
@@ -30,6 +35,8 @@ export const pageQuery = graphql`
       edges {
         node {
           Name
+          Number
+          Description
         }
       }
     }
