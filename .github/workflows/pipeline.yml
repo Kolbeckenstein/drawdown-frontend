@@ -36,5 +36,5 @@ jobs:
           docker build -t drawdown-frontend .
           docker stop drawdown-frontend
           docker rm drawdown-frontend
-          docker run --name drawdown-frontend -d -p 80:80 drawdown-frontend
+          docker run --name drawdown-frontend -d -p 80:80 drawdown-frontend -v /root/drawdown-frontend/public:/pub
           docker system prune

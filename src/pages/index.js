@@ -12,7 +12,7 @@ const IndexPage = ({data}) => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <p>This is some additional content</p>
-    <p>This should also appear if automation works.</p>
+    <p>This should also appear if deploy automation works.</p>
     <p>If integration works, data should appear below: </p>
     {data.allStrapiSolution.edges.map(document => (
       <div>
