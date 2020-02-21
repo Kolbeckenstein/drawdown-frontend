@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on: 
+ push
+ repository_dispatch:
+   types: remote-trigger
 
 jobs:
 
@@ -9,14 +12,10 @@ jobs:
     steps:
     - name: Deploy
       uses: appleboy/ssh-action@master
-      env:
-        CMS_USERNAME: "${{ secrets.cms_username }}"
-        CMS_PASSWORD: "${{ secrets.cms_password }}"
       with:
         username: root
         key: ${{ secrets.deploy_key }}
         host: 138.197.68.192
-        envs: CMS_API_KEY
         script: |
           if [ -d "drawdown-frontend" ]; then
             cd drawdown-frontend
@@ -31,7 +30,6 @@ jobs:
             cd drawdown-frontend
           fi
           npm install
-          gatsby clean
           gatsby build
           docker build -t drawdown-frontend .
           docker stop drawdown-frontend

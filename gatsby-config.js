@@ -19,10 +19,6 @@ module.exports = {
         apiURL: `http://64.225.31.179:1337`,
         queryLimit: 1000, // Defaults to 100
         contentTypes: [`solution`],
-        // loginData: {
-        //   identifier: process.env.CMS_USERNAME,
-        //   password: process.env.CMS_PASSWORD,
-        // },
       },
     },
     `gatsby-transformer-sharp`,
