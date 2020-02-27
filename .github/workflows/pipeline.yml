@@ -29,4 +29,4 @@ jobs:
             git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
             cd drawdown-frontend
           fi
-          ./build.sh
+          ./.github/workflows/build.sh
