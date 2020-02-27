@@ -30,11 +30,4 @@ jobs:
             git clone https://github.com/Kolbeckenstein/drawdown-frontend.git
             cd drawdown-frontend
           fi
-          npm install
-          gatsby clean
-          gatsby build
-          docker build -t drawdown-frontend .
-          docker stop drawdown-frontend
-          docker rm drawdown-frontend
-          docker run --name drawdown-frontend -d -p 80:80 drawdown-frontend
-          docker system prune
+          ./build.sh

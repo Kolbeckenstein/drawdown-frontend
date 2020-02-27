@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = ({data}) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
@@ -14,7 +14,6 @@ const IndexPage = ({data}) => (
     <p>This is some additional content</p>
     <p>This should also appear if automation works.</p>
     <p>Some data:</p>
-    <p>{data}</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
@@ -22,19 +21,15 @@ const IndexPage = ({data}) => (
   </Layout>
 )
 
-export default IndexPage
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    allStrapiSolution {
-      edges {
-        node {
-          Name
-        }
-      }
-    }
-  }
-`
+//     allStrapiSolution {
+//       edges {
+//         node {
+//           Name
+//         }
+//       }
+//     }
+//   }
+// `
 
 // export const pageQuery = graphql`
 //   query IndexQuery {
